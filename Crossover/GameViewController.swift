@@ -12,7 +12,14 @@ import SpriteKit
 class GameViewController: UIViewController
 {
 
+    @IBOutlet weak var timerLabel: UILabel!
+    @IBOutlet var startButton: UITapGestureRecognizer!
+    
     var scene: GameScene!
+    
+    var counter = 23
+    var pressed = false
+    var timer = NSTimer()
     
     override func viewDidLoad()
     {
@@ -24,6 +31,17 @@ class GameViewController: UIViewController
         
         skView.presentScene(scene)
     }
+    
+    @IBAction func startButtonTapped(sender: UITapGestureRecognizer)
+    {
+        timer = NSTimer.scheduledTimerWithTimeInterval(1, target: self, selector: ("updateTimer"), userInfo: nil, repeats: true)
+    }
+    
+    func updateTimer()
+    {
+        timerLabel.text = String("Shot Clock: \(counter--)")
+    }
+    
 
     override func shouldAutorotate() -> Bool
     {
@@ -51,4 +69,6 @@ class GameViewController: UIViewController
     {
         return true
     }
+    
+    
 }
