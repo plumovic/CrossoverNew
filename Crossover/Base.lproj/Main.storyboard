@@ -1,8 +1,9 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9532" systemVersion="14F27" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BV1-FR-VrT">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9532" systemVersion="14F27" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="xyq-vW-cA3">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9530"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
@@ -17,10 +18,15 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="test2" translatesAutoresizingMaskIntoConstraints="NO" id="LRY-7H-WgZ">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                            </imageView>
                             <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UvJ-8j-ecH">
-                                <rect key="frame" x="127" y="327" width="120" height="68"/>
+                                <rect key="frame" x="135" y="420" width="120" height="68"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="36"/>
-                                <state key="normal" title="Start"/>
+                                <state key="normal" title="Start">
+                                    <color key="titleColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                </state>
                                 <connections>
                                     <segue destination="BV1-FR-VrT" kind="show" id="30P-WW-Y9t"/>
                                 </connections>
@@ -28,7 +34,11 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstItem="LRY-7H-WgZ" firstAttribute="top" secondItem="6X9-uw-g6Q" secondAttribute="topMargin" id="4Ug-by-gHP"/>
                             <constraint firstItem="UvJ-8j-ecH" firstAttribute="centerX" secondItem="6X9-uw-g6Q" secondAttribute="centerX" id="8At-Kn-8Ie"/>
+                            <constraint firstItem="LRY-7H-WgZ" firstAttribute="leading" secondItem="6X9-uw-g6Q" secondAttribute="leadingMargin" constant="-20" id="ED4-TZ-CZa"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="LRY-7H-WgZ" secondAttribute="trailing" constant="-20" id="bZ4-8F-T14"/>
+                            <constraint firstItem="PY1-ZB-DkC" firstAttribute="top" secondItem="LRY-7H-WgZ" secondAttribute="bottom" id="mTu-MR-hJA"/>
                         </constraints>
                     </view>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
@@ -84,4 +94,7 @@
             <point key="canvasLocation" x="375.5" y="275.5"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="test2" width="2100" height="1500"/>
+    </resources>
 </document>
