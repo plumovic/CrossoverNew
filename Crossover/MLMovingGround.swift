@@ -161,6 +161,12 @@ class MLMovingGround: SKSpriteNode
     required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
+    
+    func start()
+    {
+        let move = SKAction.moveByX(0, y: -frame.size.height / 2, duration: 1.0)
+    }
+    
 }
 
 
