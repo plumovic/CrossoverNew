@@ -165,6 +165,7 @@ class MLMovingGround: SKSpriteNode
     func start()
     {
         let move = SKAction.moveByX(0, y: -frame.size.height / 2, duration: 1.0)
+        runAction(move)
     }
     
 }

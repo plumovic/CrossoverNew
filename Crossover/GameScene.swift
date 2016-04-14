@@ -10,6 +10,8 @@ import SpriteKit
 
 class GameScene: SKScene
 {
+    var movingGround = MLMovingGround!()
+    
     override func didMoveToView(view: SKView)
     {
         backgroundColor = UIColor.darkGrayColor()
