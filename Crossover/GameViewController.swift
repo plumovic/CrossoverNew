@@ -8,8 +8,9 @@
 
 import UIKit
 import SpriteKit
+import AVFoundation
 
-class GameViewController: UIViewController
+class GameViewController: UIViewController, AVAudioPlayerDelegate
 {
 
     @IBOutlet weak var timerLabel: UILabel!
@@ -21,6 +22,8 @@ class GameViewController: UIViewController
     var pressed = false
     var timer = NSTimer()
     
+    var bGSong = AVAudioPlayer()
+    
     override func viewDidLoad()
     {
         super.viewDidLoad()
@@ -30,8 +33,12 @@ class GameViewController: UIViewController
         scene.scaleMode = .AspectFill
         
         skView.presentScene(scene)
+        
+        playBackgroundMusic("backgroundSong")
     }
     
+    
+    //Timer
     @IBAction func startButtonTapped(sender: UITapGestureRecognizer)
     {
         timer = NSTimer.scheduledTimerWithTimeInterval(1, target: self, selector: ("updateTimer"), userInfo: nil, repeats: true)
@@ -41,6 +48,7 @@ class GameViewController: UIViewController
     {
         timerLabel.text = String("Shot Clock: \(counter--)")
     }
+    
     
 
     override func shouldAutorotate() -> Bool
@@ -68,6 +76,25 @@ class GameViewController: UIViewController
     override func prefersStatusBarHidden() -> Bool
     {
         return true
+    }
+    
+    //background song
+    func playBackgroundMusic(filename: String)
+    {
+        let url = NSBundle.mainBundle().URLForResource("backgroundSong", withExtension: nil)
+        
+        do
+        {
+            bGSong = try AVAudioPlayer(contentsOfURL: url!)
+            bGSong.numberOfLoops = -1
+            bGSong.prepareToPlay()
+            bGSong.play()
+        }
+        
+        catch let error as NSError
+        {
+            print(error.description)
+        }
     }
     
     
