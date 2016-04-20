@@ -17,6 +17,7 @@
 		3F11771A1CAD8A2700E6E5D7 /* CrossoverTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F1177191CAD8A2700E6E5D7 /* CrossoverTests.swift */; };
 		3F1177251CAD8A2700E6E5D7 /* CrossoverUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F1177241CAD8A2700E6E5D7 /* CrossoverUITests.swift */; };
 		3F15C2201CC1518D004589BA /* backgroundSong in Resources */ = {isa = PBXBuildFile; fileRef = 3F15C21F1CC1518D004589BA /* backgroundSong */; };
+		3FD4C2C41CC7E077000A3930 /* MLHero.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FD4C2C31CC7E077000A3930 /* MLHero.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -53,6 +54,7 @@
 		3F1177241CAD8A2700E6E5D7 /* CrossoverUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CrossoverUITests.swift; sourceTree = "<group>"; };
 		3F1177261CAD8A2700E6E5D7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		3F15C21F1CC1518D004589BA /* backgroundSong */ = {isa = PBXFileReference; lastKnownFileType = file; path = backgroundSong; sourceTree = "<group>"; };
+		3FD4C2C31CC7E077000A3930 /* MLHero.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MLHero.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -106,6 +108,7 @@
 			children = (
 				3F1177001CAD8A2700E6E5D7 /* AppDelegate.swift */,
 				3F1177041CAD8A2700E6E5D7 /* GameScene.swift */,
+				3FD4C2C31CC7E077000A3930 /* MLHero.swift */,
 				3F0F1CF11CB2B71D00567914 /* MLMovingGround.swift */,
 				3F1177061CAD8A2700E6E5D7 /* GameViewController.swift */,
 				3F1177081CAD8A2700E6E5D7 /* Main.storyboard */,
@@ -268,6 +271,7 @@
 			files = (
 				3F1177051CAD8A2700E6E5D7 /* GameScene.swift in Sources */,
 				3F1177071CAD8A2700E6E5D7 /* GameViewController.swift in Sources */,
+				3FD4C2C41CC7E077000A3930 /* MLHero.swift in Sources */,
 				3F1177011CAD8A2700E6E5D7 /* AppDelegate.swift in Sources */,
 				3F0F1CF21CB2B71D00567914 /* MLMovingGround.swift in Sources */,
 			);
