@@ -11,6 +11,7 @@ import SpriteKit
 class GameScene: SKScene
 {
     var movingGround = MLMovingGround!()
+    var ball = MLHero!()
     
     override func didMoveToView(view: SKView)
     {
@@ -19,6 +20,10 @@ class GameScene: SKScene
         movingGround = MLMovingGround(size: CGSizeMake(50, frame.size.height))
         movingGround.position = CGPointMake(view.frame.size.width / 2 , 0)
         addChild(movingGround)
+        
+        ball = MLHero()
+        ball.position = CGPointMake(movingGround.position.x + movingGround.frame.size.width / 2 + ball.frame.size.width / 2, 70)
+        addChild(ball)
     }
     
     override func touchesBegan(touches: Set<UITouch>, withEvent event: UIEvent?)
