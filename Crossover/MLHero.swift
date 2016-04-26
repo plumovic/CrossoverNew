@@ -18,6 +18,7 @@ class MLHero: SKSpriteNode
         super.init(texture: nil, color: UIColor.clearColor(), size: CGSizeMake(50, 50))
         
         ball = SKSpriteNode(color: UIColor.orangeColor(), size: CGSizeMake(50, self.frame.size.height))
+
         addChild(ball)
     }
 
