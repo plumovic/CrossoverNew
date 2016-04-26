@@ -28,7 +28,7 @@ class GameViewController: UIViewController, AVAudioPlayerDelegate
         
         skView.presentScene(scene)
         
-        playBackgroundMusic("backgroundSong")
+        playBackgroundMusic("backgroundSong.wav")
     }
     
     
@@ -68,7 +68,7 @@ class GameViewController: UIViewController, AVAudioPlayerDelegate
     //background song
     func playBackgroundMusic(filename: String)
     {
-        let url = NSBundle.mainBundle().URLForResource("backgroundSong", withExtension: nil)
+        let url = NSBundle.mainBundle().URLForResource("backgroundSong.wav", withExtension: nil)
         
         do
         {
