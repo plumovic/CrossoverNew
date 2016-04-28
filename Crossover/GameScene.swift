@@ -7,11 +7,13 @@
 //
 
 import SpriteKit
+import AVFoundation
 
 class GameScene: SKScene
 {
     var movingGround = MLMovingGround!()
     var ball = MLHero!()
+    var bGSong = AVAudioPlayer()
     
     override func didMoveToView(view: SKView)
     {
@@ -30,10 +32,31 @@ class GameScene: SKScene
     override func touchesBegan(touches: Set<UITouch>, withEvent event: UIEvent?)
     {
         ball.stop()
+        
+        playBackgroundMusic("backgroundSong.wav")
     }
    
     override func update(currentTime: CFTimeInterval)
     {
         /* Called before each frame is rendered */
+    }
+    
+    //background song
+    func playBackgroundMusic(filename: String)
+    {
+        let url = NSBundle.mainBundle().URLForResource("backgroundSong.wav", withExtension: nil)
+        
+        do
+        {
+            bGSong = try AVAudioPlayer(contentsOfURL: url!)
+            bGSong.numberOfLoops = -1
+            bGSong.prepareToPlay()
+            bGSong.play()
+        }
+            
+        catch let error as NSError
+        {
+            print(error.description)
+        }
     }
 }

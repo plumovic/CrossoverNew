@@ -16,7 +16,6 @@ class GameViewController: UIViewController, AVAudioPlayerDelegate
     @IBOutlet var startButton: UITapGestureRecognizer!
     
     var scene: GameScene!
-    var bGSong = AVAudioPlayer()
     
     override func viewDidLoad()
     {
@@ -27,8 +26,6 @@ class GameViewController: UIViewController, AVAudioPlayerDelegate
         scene.scaleMode = .AspectFill
         
         skView.presentScene(scene)
-        
-        playBackgroundMusic("backgroundSong.wav")
     }
     
     
@@ -64,25 +61,4 @@ class GameViewController: UIViewController, AVAudioPlayerDelegate
     {
         return true
     }
-    
-    //background song
-    func playBackgroundMusic(filename: String)
-    {
-        let url = NSBundle.mainBundle().URLForResource("backgroundSong.wav", withExtension: nil)
-        
-        do
-        {
-            bGSong = try AVAudioPlayer(contentsOfURL: url!)
-            bGSong.numberOfLoops = -1
-            bGSong.prepareToPlay()
-            bGSong.play()
-        }
-        
-        catch let error as NSError
-        {
-            print(error.description)
-        }
-    }
-    
-    
 }
