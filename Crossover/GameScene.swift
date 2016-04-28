@@ -24,11 +24,12 @@ class GameScene: SKScene
         ball = MLHero()
         ball.position = CGPointMake(movingGround.position.x + movingGround.frame.size.width / 2 + ball.frame.size.width / 2, 70)
         addChild(ball)
+        ball.moveBall()
     }
     
     override func touchesBegan(touches: Set<UITouch>, withEvent event: UIEvent?)
     {
-        movingGround.start()
+        ball.stop()
     }
    
     override func update(currentTime: CFTimeInterval)
