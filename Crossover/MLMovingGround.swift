@@ -12,12 +12,6 @@ import SpriteKit
 class MLMovingGround: SKSpriteNode
 {
     let NUMBER_OF_SEGMENTS = 20
-    let NUMBER_OF_SEGMENTS2 = 20
-    let NUMBER_OF_SEGMENTS3 = 20
-    let NUMBER_OF_SEGMENTS4 = 20
-    let NUMBER_OF_SEGMENTS5 = 20
-    let NUMBER_OF_SEGMENTS6 = 20
-    let NUMBER_OF_SEGMENTS7 = 20
     
     let COLOR_ONE = UIColor(red: 240.0 / 255.0, green: 180 / 255.0, blue: 100 / 255.0, alpha: 1)
     let COLOR_TWO = UIColor(red: 250.0 / 255.0, green: 200 / 255.0, blue: 110 / 255.0, alpha: 1)
@@ -47,7 +41,25 @@ class MLMovingGround: SKSpriteNode
             addChild(segment)
         }
         
-        for var i = 0; i < NUMBER_OF_SEGMENTS2; i++
+        for var i = 0; i < NUMBER_OF_SEGMENTS; i++
+        {
+            var segmentColor = UIColor()
+            if i % 2 == 0
+            {
+                segmentColor = COLOR_TWO
+            }
+            else
+            {
+                segmentColor = COLOR_FOUR
+            }
+            
+            let segment = SKSpriteNode(color: segmentColor, size: CGSizeMake(self.size.width, self.size.height / CGFloat(NUMBER_OF_SEGMENTS)))
+            segment.anchorPoint = CGPointMake(0.5, 0)
+            segment.position = CGPointMake(-20, CGFloat(i) * segment.size.height)
+            addChild(segment)
+        }
+
+        for var i = 0; i < NUMBER_OF_SEGMENTS; i++
         {
             var segmentColor = UIColor()
             if i % 2 == 0
@@ -59,49 +71,85 @@ class MLMovingGround: SKSpriteNode
                 segmentColor = COLOR_ONE
             }
             
-            let segment = SKSpriteNode(color: segmentColor, size: CGSizeMake(self.size.width, self.size.height / CGFloat(NUMBER_OF_SEGMENTS2)))
+            let segment = SKSpriteNode(color: segmentColor, size: CGSizeMake(self.size.width, self.size.height / CGFloat(NUMBER_OF_SEGMENTS)))
             segment.anchorPoint = CGPointMake(0.5, 0)
-            segment.position = CGPointMake(-50, CGFloat(i) * segment.size.height)
+            segment.position = CGPointMake(-40, CGFloat(i) * segment.size.height)
             addChild(segment)
         }
-
-        for var i = 0; i < NUMBER_OF_SEGMENTS3; i++
+        
+        for var i = 0; i < NUMBER_OF_SEGMENTS; i++
         {
             var segmentColor = UIColor()
             if i % 2 == 0
             {
-                segmentColor = COLOR_FOUR
+                segmentColor = COLOR_ONE
             }
             else
             {
                 segmentColor = COLOR_TWO
             }
             
-            let segment = SKSpriteNode(color: segmentColor, size: CGSizeMake(self.size.width, self.size.height / CGFloat(NUMBER_OF_SEGMENTS3)))
+            let segment = SKSpriteNode(color: segmentColor, size: CGSizeMake(self.size.width, self.size.height / CGFloat(NUMBER_OF_SEGMENTS)))
+            segment.anchorPoint = CGPointMake(0.5, 0)
+            segment.position = CGPointMake(-60, CGFloat(i) * segment.size.height)
+            addChild(segment)
+        }
+        
+        for var i = 0; i < NUMBER_OF_SEGMENTS; i++
+        {
+            var segmentColor = UIColor()
+            if i % 2 == 0
+            {
+                segmentColor = COLOR_TWO
+            }
+            else
+            {
+                segmentColor = COLOR_FOUR
+            }
+            
+            let segment = SKSpriteNode(color: segmentColor, size: CGSizeMake(self.size.width, self.size.height / CGFloat(NUMBER_OF_SEGMENTS)))
+            segment.anchorPoint = CGPointMake(0.5, 0)
+            segment.position = CGPointMake(-80, CGFloat(i) * segment.size.height)
+            addChild(segment)
+        }
+        
+        for var i = 0; i < NUMBER_OF_SEGMENTS; i++
+        {
+            var segmentColor = UIColor()
+            if i % 2 == 0
+            {
+                segmentColor = COLOR_THREE
+            }
+            else
+            {
+                segmentColor = COLOR_ONE
+            }
+            
+            let segment = SKSpriteNode(color: segmentColor, size: CGSizeMake(self.size.width, self.size.height / CGFloat(NUMBER_OF_SEGMENTS)))
             segment.anchorPoint = CGPointMake(0.5, 0)
             segment.position = CGPointMake(-100, CGFloat(i) * segment.size.height)
             addChild(segment)
         }
         
-        for var i = 0; i < NUMBER_OF_SEGMENTS4; i++
+        for var i = 0; i < NUMBER_OF_SEGMENTS; i++
         {
             var segmentColor = UIColor()
             if i % 2 == 0
             {
-                segmentColor = COLOR_TWO
+                segmentColor = COLOR_ONE
             }
             else
             {
-                segmentColor = COLOR_ONE
+                segmentColor = COLOR_TWO
             }
             
-            let segment = SKSpriteNode(color: segmentColor, size: CGSizeMake(self.size.width, self.size.height / CGFloat(NUMBER_OF_SEGMENTS4)))
+            let segment = SKSpriteNode(color: segmentColor, size: CGSizeMake(self.size.width, self.size.height / CGFloat(NUMBER_OF_SEGMENTS)))
             segment.anchorPoint = CGPointMake(0.5, 0)
-            segment.position = CGPointMake(-150, CGFloat(i) * segment.size.height)
+            segment.position = CGPointMake(-120, CGFloat(i) * segment.size.height)
             addChild(segment)
         }
         
-        for var i = 0; i < NUMBER_OF_SEGMENTS5; i++
+        for var i = 0; i < NUMBER_OF_SEGMENTS; i++
         {
             var segmentColor = UIColor()
             if i % 2 == 0
@@ -113,31 +161,13 @@ class MLMovingGround: SKSpriteNode
                 segmentColor = COLOR_FOUR
             }
             
-            let segment = SKSpriteNode(color: segmentColor, size: CGSizeMake(self.size.width, self.size.height / CGFloat(NUMBER_OF_SEGMENTS5)))
+            let segment = SKSpriteNode(color: segmentColor, size: CGSizeMake(self.size.width, self.size.height / CGFloat(NUMBER_OF_SEGMENTS)))
             segment.anchorPoint = CGPointMake(0.5, 0)
-            segment.position = CGPointMake(50, CGFloat(i) * segment.size.height)
+            segment.position = CGPointMake(-140, CGFloat(i) * segment.size.height)
             addChild(segment)
         }
         
-        for var i = 0; i < NUMBER_OF_SEGMENTS6; i++
-        {
-            var segmentColor = UIColor()
-            if i % 2 == 0
-            {
-                segmentColor = COLOR_THREE
-            }
-            else
-            {
-                segmentColor = COLOR_ONE
-            }
-            
-            let segment = SKSpriteNode(color: segmentColor, size: CGSizeMake(self.size.width, self.size.height / CGFloat(NUMBER_OF_SEGMENTS6)))
-            segment.anchorPoint = CGPointMake(0.5, 0)
-            segment.position = CGPointMake(100, CGFloat(i) * segment.size.height)
-            addChild(segment)
-        }
-
-        for var i = 0; i < NUMBER_OF_SEGMENTS7; i++
+        for var i = 0; i < NUMBER_OF_SEGMENTS; i++
         {
             var segmentColor = UIColor()
             if i % 2 == 0
@@ -149,12 +179,200 @@ class MLMovingGround: SKSpriteNode
                 segmentColor = COLOR_TWO
             }
             
-            let segment = SKSpriteNode(color: segmentColor, size: CGSizeMake(self.size.width, self.size.height / CGFloat(NUMBER_OF_SEGMENTS7)))
+            let segment = SKSpriteNode(color: segmentColor, size: CGSizeMake(self.size.width, self.size.height / CGFloat(NUMBER_OF_SEGMENTS)))
             segment.anchorPoint = CGPointMake(0.5, 0)
-            segment.position = CGPointMake(150, CGFloat(i) * segment.size.height)
+            segment.position = CGPointMake(-170, CGFloat(i) * segment.size.height)
+            addChild(segment)
+        }
+        
+        for var i = 0; i < NUMBER_OF_SEGMENTS; i++
+        {
+            var segmentColor = UIColor()
+            if i % 2 == 0
+            {
+                segmentColor = COLOR_THREE
+            }
+            else
+            {
+                segmentColor = COLOR_ONE
+            }
+            
+            let segment = SKSpriteNode(color: segmentColor, size: CGSizeMake(self.size.width, self.size.height / CGFloat(NUMBER_OF_SEGMENTS)))
+            segment.anchorPoint = CGPointMake(0.5, 0)
+            segment.position = CGPointMake(-160, CGFloat(i) * segment.size.height)
+            addChild(segment)
+        }
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        for var i = 0; i < NUMBER_OF_SEGMENTS; i++
+        {
+            var segmentColor = UIColor()
+            if i % 2 == 0
+            {
+                segmentColor = COLOR_TWO
+            }
+            else
+            {
+                segmentColor = COLOR_FOUR
+            }
+            
+            let segment = SKSpriteNode(color: segmentColor, size: CGSizeMake(self.size.width, self.size.height / CGFloat(NUMBER_OF_SEGMENTS)))
+            segment.anchorPoint = CGPointMake(0.5, 0)
+            segment.position = CGPointMake(20, CGFloat(i) * segment.size.height)
+            addChild(segment)
+        }
+        
+        for var i = 0; i < NUMBER_OF_SEGMENTS; i++
+        {
+            var segmentColor = UIColor()
+            if i % 2 == 0
+            {
+                segmentColor = COLOR_THREE
+            }
+            else
+            {
+                segmentColor = COLOR_ONE
+            }
+            
+            let segment = SKSpriteNode(color: segmentColor, size: CGSizeMake(self.size.width, self.size.height / CGFloat(NUMBER_OF_SEGMENTS)))
+            segment.anchorPoint = CGPointMake(0.5, 0)
+            segment.position = CGPointMake(40, CGFloat(i) * segment.size.height)
             addChild(segment)
         }
 
+        for var i = 0; i < NUMBER_OF_SEGMENTS; i++
+        {
+            var segmentColor = UIColor()
+            if i % 2 == 0
+            {
+                segmentColor = COLOR_ONE
+            }
+            else
+            {
+                segmentColor = COLOR_TWO
+            }
+            
+            let segment = SKSpriteNode(color: segmentColor, size: CGSizeMake(self.size.width, self.size.height / CGFloat(NUMBER_OF_SEGMENTS)))
+            segment.anchorPoint = CGPointMake(0.5, 0)
+            segment.position = CGPointMake(60, CGFloat(i) * segment.size.height)
+            addChild(segment)
+        }
+        
+        for var i = 0; i < NUMBER_OF_SEGMENTS; i++
+        {
+            var segmentColor = UIColor()
+            if i % 2 == 0
+            {
+                segmentColor = COLOR_TWO
+            }
+            else
+            {
+                segmentColor = COLOR_FOUR
+            }
+            
+            let segment = SKSpriteNode(color: segmentColor, size: CGSizeMake(self.size.width, self.size.height / CGFloat(NUMBER_OF_SEGMENTS)))
+            segment.anchorPoint = CGPointMake(0.5, 0)
+            segment.position = CGPointMake(80, CGFloat(i) * segment.size.height)
+            addChild(segment)
+        }
+        
+        for var i = 0; i < NUMBER_OF_SEGMENTS; i++
+        {
+            var segmentColor = UIColor()
+            if i % 2 == 0
+            {
+                segmentColor = COLOR_THREE
+            }
+            else
+            {
+                segmentColor = COLOR_ONE
+            }
+            
+            let segment = SKSpriteNode(color: segmentColor, size: CGSizeMake(self.size.width, self.size.height / CGFloat(NUMBER_OF_SEGMENTS)))
+            segment.anchorPoint = CGPointMake(0.5, 0)
+            segment.position = CGPointMake(100, CGFloat(i) * segment.size.height)
+            addChild(segment)
+        }
+        
+        for var i = 0; i < NUMBER_OF_SEGMENTS; i++
+        {
+            var segmentColor = UIColor()
+            if i % 2 == 0
+            {
+                segmentColor = COLOR_ONE
+            }
+            else
+            {
+                segmentColor = COLOR_TWO
+            }
+            
+            let segment = SKSpriteNode(color: segmentColor, size: CGSizeMake(self.size.width, self.size.height / CGFloat(NUMBER_OF_SEGMENTS)))
+            segment.anchorPoint = CGPointMake(0.5, 0)
+            segment.position = CGPointMake(120, CGFloat(i) * segment.size.height)
+            addChild(segment)
+        }
+        
+        for var i = 0; i < NUMBER_OF_SEGMENTS; i++
+        {
+            var segmentColor = UIColor()
+            if i % 2 == 0
+            {
+                segmentColor = COLOR_TWO
+            }
+            else
+            {
+                segmentColor = COLOR_FOUR
+            }
+            
+            let segment = SKSpriteNode(color: segmentColor, size: CGSizeMake(self.size.width, self.size.height / CGFloat(NUMBER_OF_SEGMENTS)))
+            segment.anchorPoint = CGPointMake(0.5, 0)
+            segment.position = CGPointMake(140, CGFloat(i) * segment.size.height)
+            addChild(segment)
+        }
+        
+        for var i = 0; i < NUMBER_OF_SEGMENTS; i++
+        {
+            var segmentColor = UIColor()
+            if i % 2 == 0
+            {
+                segmentColor = COLOR_ONE
+            }
+            else
+            {
+                segmentColor = COLOR_TWO
+            }
+            
+            let segment = SKSpriteNode(color: segmentColor, size: CGSizeMake(self.size.width, self.size.height / CGFloat(NUMBER_OF_SEGMENTS)))
+            segment.anchorPoint = CGPointMake(0.5, 0)
+            segment.position = CGPointMake(170, CGFloat(i) * segment.size.height)
+            addChild(segment)
+        }
+        
+        for var i = 0; i < NUMBER_OF_SEGMENTS; i++
+        {
+            var segmentColor = UIColor()
+            if i % 2 == 0
+            {
+                segmentColor = COLOR_THREE
+            }
+            else
+            {
+                segmentColor = COLOR_ONE
+            }
+            
+            let segment = SKSpriteNode(color: segmentColor, size: CGSizeMake(self.size.width, self.size.height / CGFloat(NUMBER_OF_SEGMENTS)))
+            segment.anchorPoint = CGPointMake(0.5, 0)
+            segment.position = CGPointMake(160, CGFloat(i) * segment.size.height)
+            addChild(segment)
+        }
+        
 
     }
 

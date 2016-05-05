@@ -13,27 +13,48 @@ class GameScene: SKScene
 {
     var movingGround = MLMovingGround!()
     var ball = MLHero!()
+    var shadow = MLShadow!()
     var bGSong = AVAudioPlayer()
+    var isStarted = false
     
     override func didMoveToView(view: SKView)
     {
         backgroundColor = UIColor.darkGrayColor()
         
-        movingGround = MLMovingGround(size: CGSizeMake(50, frame.size.height))
+        movingGround = MLMovingGround(size: CGSizeMake(MLGroundWidth, frame.size.height))
         movingGround.position = CGPointMake(view.frame.size.width / 2 , 0)
+        movingGround.zPosition = -10
         addChild(movingGround)
         
         ball = MLHero()
-        ball.position = CGPointMake(movingGround.position.x + movingGround.frame.size.width / 2 + ball.frame.size.width / 2, 70)
+        ball.position = CGPointMake(movingGround.position.x + movingGround.frame.size.width / 2 + ball.frame.size.width / 2 + 40, 70)
         addChild(ball)
+        
+        shadow = MLShadow()
+        shadow.position = CGPointMake(movingGround.position.x + movingGround.frame.size.width / 2 + ball.frame.size.width / 2 + 45, 69)
+        shadow.zPosition = -5
+        addChild(shadow)
+    }
+    
+    func start()
+    {
+        isStarted = true
+        movingGround.start()
         ball.moveBall()
+        playBackgroundMusic("backgroundSong.wav")
     }
     
     override func touchesBegan(touches: Set<UITouch>, withEvent event: UIEvent?)
     {
-        ball.stop()
-        
-        playBackgroundMusic("backgroundSong.wav")
+        if !isStarted
+        {
+            start()
+        }
+        else
+        {
+            ball.crossover()
+            shadow.crossover()
+        }
     }
    
     override func update(currentTime: CFTimeInterval)
