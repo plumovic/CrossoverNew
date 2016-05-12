@@ -44,7 +44,7 @@ class MLHero: SKSpriteNode
             scale = 1.0
         }
         
-        let translate = SKAction.moveByX(scale * (size.width + MLGroundWidth + 80), y: 0, duration: 0.3)
+        let translate = SKAction.moveByX(scale * (size.width + MLGroundWidth + 80), y: 0, duration: 0.2)
         let flip = SKAction.scaleXTo(scale, duration: 0.05)
         
         runAction(translate)

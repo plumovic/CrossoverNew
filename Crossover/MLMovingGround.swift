@@ -382,7 +382,7 @@ class MLMovingGround: SKSpriteNode
     
     func start()
     {
-        let move = SKAction.moveByX(0, y: -frame.size.height / 2, duration: 1.8)
+        let move = SKAction.moveByX(0, y: -frame.size.height / 2, duration: 2.5)
         let restartMove = SKAction.moveToY(0, duration: 0)
         let moveSequence = SKAction.sequence([move, restartMove])
         runAction(SKAction.repeatActionForever(moveSequence))
