@@ -36,7 +36,7 @@ class MLHandGenerator: SKSpriteNode
         }
         
         let hand = MLHand()
-        hand.position.x = scale * (MLGroundWidth / 2 + hand.size.width * 1.5)
+        hand.position.x = scale * (MLGroundWidth / 2 + hand.size.width * 1.3)
         hand.position.y = size.height / 2 + hand.size.height / 2
         hand.xScale = xScale
         addChild(hand)

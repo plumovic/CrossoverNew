@@ -20,6 +20,8 @@ class MLHand: SKSpriteNode
         let size = CGSizeMake(HAND_WIDTH, HAND_HEIGHT)
         super.init(texture: nil, color: WALL_COLOR, size: size)
         hand = SKSpriteNode(imageNamed: "HAND2PETAR")
+        hand.xScale = 2.5
+        hand.yScale = 2.5
         addChild(hand)
         startMoving()
         loadPhysicsBodyWithSize(size)
