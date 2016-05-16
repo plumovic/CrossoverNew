@@ -10,6 +10,7 @@ import SpriteKit
 
 class MLHandGenerator: SKSpriteNode
 {
+    
     var generationTimer: NSTimer?
     
     func startGeneratingHandsEvery(seconds: NSTimeInterval)
@@ -19,20 +20,25 @@ class MLHandGenerator: SKSpriteNode
     
     func generateHands()
     {
+        
         var scale: CGFloat
+        var xScale : CGFloat
         let random = arc4random_uniform(2)
         if random == 0
         {
+            xScale = -1.0
             scale = -1.0
         }
         else
         {
+            xScale = 1.0
             scale = 1.0
         }
         
         let hand = MLHand()
-        hand.position.x = scale * (MLGroundWidth / 2 + hand.size.width)
+        hand.position.x = scale * (MLGroundWidth / 2 + hand.size.width * 1.5)
         hand.position.y = size.height / 2 + hand.size.height / 2
+        hand.xScale = xScale
         addChild(hand)
     }
 }

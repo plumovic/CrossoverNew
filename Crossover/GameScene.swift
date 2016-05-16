@@ -42,8 +42,10 @@ class GameScene: SKScene
         addChild(handGenerator)
         
         let tapToStart = SKLabelNode(text: "Tap To Start!")
+        tapToStart.name = "tapToStart"
         tapToStart.fontColor = UIColor.grayColor()
         tapToStart.fontName = "Noteworthy"
+        tapToStart.fontSize = 25.0
         tapToStart.position = view.center
         addChild(tapToStart)
         
@@ -56,6 +58,8 @@ class GameScene: SKScene
         ball.moveBall()
         playBackgroundMusic("backgroundSong.wav")
         handGenerator.startGeneratingHandsEvery(0.7)
+        let tapToStart = childNodeWithName("tapToStart")
+        tapToStart?.removeFromParent()
     }
     
     override func touchesBegan(touches: Set<UITouch>, withEvent event: UIEvent?)

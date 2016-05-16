@@ -22,8 +22,19 @@ class MLHero: SKSpriteNode
         ball.xScale = 0.5
         ball.yScale = 0.5
         addChild(ball)
+        
+        loadPhysicsBodyWithSize(size)
     }
 
+    func loadPhysicsBodyWithSize(size: CGSize)
+    {
+        physicsBody = SKPhysicsBody(rectangleOfSize: size)
+        physicsBody?.categoryBitMask = ballCategory
+        physicsBody?.contactTestBitMask = handCategory
+        physicsBody?.affectedByGravity = false
+        
+    }
+    
     required init?(coder aDecoder: NSCoder)
     {
         fatalError("init(coder:) has not been implemented")
