@@ -40,8 +40,14 @@ class MLHand: SKSpriteNode
     
     func startMoving()
     {
-        let moveDown = SKAction.moveByX(0, y: -300, duration: 0.5)
+        var moveDown = SKAction.moveByX(0, y: -300, duration: 0.5)
+        moveDown = ++5
         runAction(SKAction.repeatActionForever(moveDown))
+    }
+    
+    func stopMoving()
+    {
+        removeAllActions()
     }
     
 }

@@ -12,10 +12,16 @@ class MLHandGenerator: SKSpriteNode
 {
     
     var generationTimer: NSTimer?
+    var hands = [MLHand]()
     
     func startGeneratingHandsEvery(seconds: NSTimeInterval)
     {
         generationTimer = NSTimer.scheduledTimerWithTimeInterval(seconds, target: self, selector: "generateHands", userInfo: nil, repeats: true)
+    }
+    
+    func stopGenerating()
+    {
+        generationTimer?.invalidate()
     }
     
     func generateHands()
@@ -39,6 +45,16 @@ class MLHandGenerator: SKSpriteNode
         hand.position.x = scale * (MLGroundWidth / 2 + hand.size.width * 1.3)
         hand.position.y = size.height / 2 + hand.size.height / 2
         hand.xScale = xScale
+        hands.append(hand)
         addChild(hand)
+    }
+    
+    func stopHands()
+    {
+        stopGenerating()
+        for hand in hands
+        {
+            hand.stopMoving()
+        }
     }
 }

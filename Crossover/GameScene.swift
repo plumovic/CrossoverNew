@@ -9,13 +9,14 @@
 import SpriteKit
 import AVFoundation
 
-class GameScene: SKScene
+class GameScene: SKScene, SKPhysicsContactDelegate
 {
     var movingGround = MLMovingGround!()
     var ball = MLHero!()
     var shadow = MLShadow!()
     var bGSong = AVAudioPlayer()
     var isStarted = false
+    var isGameOver = false
     var handGenerator = MLHandGenerator!()
     
     override func didMoveToView(view: SKView)
@@ -49,6 +50,8 @@ class GameScene: SKScene
         tapToStart.position = view.center
         addChild(tapToStart)
         
+        physicsWorld.contactDelegate = self
+        
     }
     
     func start()
@@ -62,9 +65,37 @@ class GameScene: SKScene
         tapToStart?.removeFromParent()
     }
     
+    func gameOver()
+    {
+        isGameOver = true
+        ball.physicsBody = nil
+        handGenerator.stopHands()
+        movingGround.stop()
+        ball.stop()
+        
+        let gameOverLabel = SKLabelNode(text: "Game Over!")
+        gameOverLabel.fontColor = UIColor.blackColor()
+        gameOverLabel.fontName = "Noteworthy"
+        gameOverLabel.position.x = view!.center.x
+        gameOverLabel.position.y = view!.center.y
+        addChild(gameOverLabel)
+    }
+    
+    func restart()
+    {
+        let newScene = GameScene(size: view!.bounds.size)
+        newScene.scaleMode = .AspectFill
+        
+        view?.presentScene(newScene)
+    }
+    
     override func touchesBegan(touches: Set<UITouch>, withEvent event: UIEvent?)
     {
-        if !isStarted
+        if isGameOver
+        {
+            restart()
+        }
+        else if !isStarted
         {
             start()
         }
@@ -75,6 +106,11 @@ class GameScene: SKScene
         }
     }
    
+    func didBeginContact(contact: SKPhysicsContact)
+    {
+        gameOver()
+    }
+    
     override func update(currentTime: CFTimeInterval)
     {
         /* Called before each frame is rendered */

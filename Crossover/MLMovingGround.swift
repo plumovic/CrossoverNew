@@ -389,6 +389,11 @@ class MLMovingGround: SKSpriteNode
         runAction(SKAction.repeatActionForever(moveSequence))
     }
     
+    func stop()
+    {
+        removeAllActions()
+    }
+    
 }
 
 
